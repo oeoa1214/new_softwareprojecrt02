@@ -22,10 +22,11 @@ public class file_reader implements Serializable {
             //문자 하나씩 출력 공백문자 일 떈 공백문자 출력
             System.out.print((char) c);
             if ((char) c == ' ') {
-                //제산함수
+             /*   //제산함수
                 hash_addr=hash_table.hash_function(word);
                 //삽입 함수
                 hash_table.hash_insertion(word,hash_addr,index);
+               */
                 word= "";
             } else {
                 word += (char) c;
@@ -37,11 +38,21 @@ public class file_reader implements Serializable {
 
         //마지막 단어
         if (word.equals("") != true) {
-
+            /*
             hash_addr=hash_function(word);
 
             hash_insertion(word,hash_addr,index);
+            */
         }
+
+
+
         fin.close();
+
+
+
     }
+
+
 }
+
