@@ -16,7 +16,7 @@ public class file_reader implements Serializable {
         int index=0;
         int hash_addr=0;
         //함수 호출하기 위해서 hash_table 선언
-        hash_class hash_table = new hash_class();
+
         //글자들을 더해서 프린터 클래스로 보내기
         file_printer printer = new file_printer();
         String sum="";
@@ -32,15 +32,17 @@ public class file_reader implements Serializable {
             {
 
                 if (!word.isEmpty()){
-                    if(word.contains("`s")) {
+                    if(word.contains("'s")) {
                         word = word.substring( 0, word.length() - 2);
                     }
+
+
                     word.toLowerCase();
-                /*   //제산함수
+                    hash_class hash_table = new hash_class(word,index);
                 hash_addr=hash_table.hash_function(word);
                 //삽입 함수
-                hash_table.hash_insertion(word,hash_addr,index);
-               */
+                hash_table.hash_insertion(word,index,hash_addr);
+
                 }
 
 
@@ -58,11 +60,11 @@ public class file_reader implements Serializable {
 
         //마지막 단어
         if (word.equals("") != true) {
-            /*
-            hash_addr=hash_function(word);
+            hash_class hash_table = new hash_class(word,index);
+            hash_addr=hash_table.hash_function(word);
 
-            hash_insertion(word,hash_addr,index);
-            */
+            hash_table.hash_insertion(word,index,hash_addr);
+
         }
 
 
