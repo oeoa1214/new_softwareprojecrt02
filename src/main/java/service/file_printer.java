@@ -5,12 +5,17 @@ public class file_printer {
 
     public void buffer(String string)
     {
+
         this.string=string;
 
     }
 
     public void choice()
     {
+        if(string==null)
+        {
+            IO.println("빈 파일입니다.");
+        }
         IO.println(this.string);
     }
 
