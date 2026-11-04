@@ -11,6 +11,10 @@ public class file_reader implements Serializable {
                 FileReader fin = new FileReader(fileName);
                 int c;
                 String word = "";
+                //test1
+                /*
+                IO.println("파일 스트림 열기 성공!");
+                */
                 //문자를 c 에 읽음 . 파일 끝까지 반복
 
                 int count = 0;

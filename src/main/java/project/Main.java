@@ -68,9 +68,14 @@ public class Main {
                     fileName = stringscanner.nextLine();
                     file_reader reader = new file_reader();
                     reader.readFile(fileName);
-                    for(int i=0; i<50; i++)
-                        IO.println("");
-                    IO.println("파일이 입력되었습니다.");
+
+                    try {
+                        // 2000ms = 2초 동안 정지
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                     try {
                         // 2000ms = 2초 동안 정지
                         Thread.sleep(2000);
@@ -80,6 +85,8 @@ public class Main {
                     for(int i=0; i<50; i++)
                         IO.println("");
                 } catch (InputMismatchException e) {
+
+
                     IO.println("잘못된 파일 입력입니다 다시 입력해주세요.");
 
 
@@ -87,7 +94,7 @@ public class Main {
                 break;
 
             case 2:
-                if (fileName == "") {
+                if (fileName.equals("")) {
                     try {
                         // 2000ms = 2초 동안 정지
                         Thread.sleep(2000);
@@ -95,6 +102,12 @@ public class Main {
                         e.printStackTrace();
                     }
                     IO.println("아직 파일이 등록되지 않았습니다 먼저 메뉴 1번파일을 먼저 입력해주세요.");
+                    try {
+                        // 2000ms = 2초 동안 정지
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     for(int i=0; i<50; i++)
                         IO.println("");
                     break;
@@ -105,7 +118,7 @@ public class Main {
                 printer.choice();
                 break;
             case 3:
-                if (fileName == "") {
+                if (fileName.equals("") ) {
                     IO.println("아직 파일이 등록되지 않았습니다 먼저 메뉴 1번파일을 먼저 입력해주세요.");
                     try {
                         // 2000ms = 2초 동안 정지
@@ -137,7 +150,7 @@ public class Main {
                 break;
 
             case 4:
-                if (fileName == "") {
+                if (fileName.equals("")) {
                     IO.println("아직 파일이 등록되지 않았습니다 먼저 메뉴 1번파일을 먼저 입력해주세요.");
 
                     try {
@@ -157,13 +170,22 @@ public class Main {
 
             case 0:
                 mySwitch = false;
-
+                IO.println("프로그램을 종료합니다");
+                break;
 
             default:
                 IO.println("잘못된 메뉴 입력입니다. 0~4 중 하나의 번호를 입력해주세요.");
           }
         }
+         //test2
+            /*
+            int sum=0;
+            var test_word = "banana";
+            for(int i=0 ; i<6; i++)
+                sum+=test_word.charAt(i);
+            IO.println(sum);
 
+          */
         }
 
 

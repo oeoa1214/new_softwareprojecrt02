@@ -4,7 +4,6 @@ import java.io.Serializable;
 public class hash_class implements Serializable{
 
     public static int hash_size=1000;
-
     private static Node [] hash_table= new Node[hash_size];
 
   //객체 선언 없이 호출+ 어느곳이나공유할려고
@@ -118,6 +117,10 @@ public class hash_class implements Serializable{
 
        int hash_addr= hash_function(word);
         Node temp=hash_table[hash_addr];
+        if(temp.key=="") {
+            IO.print("없는 단어 입니다.");
+            return;
+        }
         System.out.printf("%-13s  %-5s %s\n", "단어", "", "줄번호");
         String sum="";
         while(temp!=null)
